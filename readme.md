@@ -29,36 +29,40 @@ A RESTful API built using Go (Golang) to manage users and dynamically calculate 
 
 ## Project Structure
 
-.
-├── cmd/
-│   └── server/
-│       └── main.go
-├── config/
-│   └── config.go
-├── db/
-│   ├── migrations/
-│   └── sqlc/
-│       ├── queries/
-│       │   └── users.sql
-│       ├── db.go
-│       ├── models.go
-│       └── users.sql.go
-├── internal/
-│   ├── handler/
-│   │   └── user_handler.go
-│   ├── logger/
-│   │   └── logger.go
-│   ├── middleware/
-│   ├── models/
-│   │   └── user.go
-│   ├── routes/
-│   │   └── routes.go
-│   └── service/
-│       └── age.go
-├── sqlc.yaml
-├── go.mod
-├── go.sum
-└── README.md
+cmd/
+└── server/
+└── main.go
+
+config/
+└── config.go
+
+db/
+├── migrations/
+└── sqlc/
+├── queries/
+│ └── users.sql
+├── db.go
+├── models.go
+├── users.sql.go
+└── schema.sql
+
+internal/
+├── handler/
+│ └── user_handler.go
+├── routes/
+│ └── routes.go
+├── service/
+│ └── age.go
+├── logger/
+│ └── logger.go
+├── models/
+│ └── user.go
+└── middleware/
+
+sqlc.yaml
+go.mod
+go.sum
+README.md
 
 ---
 
@@ -187,4 +191,5 @@ irm http://localhost:3000/users
 ## Author
 
 Monal Khatri  
+
 
