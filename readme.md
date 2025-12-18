@@ -29,40 +29,33 @@ A RESTful API built using Go (Golang) to manage users and dynamically calculate 
 
 ## Project Structure
 
-cmd/
-└── server/
-└── main.go
+## 📁 Project Structure
 
-config/
-└── config.go
+The project follows a layered architecture to maintain separation of concerns:
 
-db/
-├── migrations/
-└── sqlc/
-├── queries/
-│ └── users.sql
-├── db.go
-├── models.go
-├── users.sql.go
-└── schema.sql
+- **cmd/server**
+  - `main.go` – Application entry point
 
-internal/
-├── handler/
-│ └── user_handler.go
-├── routes/
-│ └── routes.go
-├── service/
-│ └── age.go
-├── logger/
-│ └── logger.go
-├── models/
-│ └── user.go
-└── middleware/
+- **config**
+  - `config.go` – Environment and configuration loading
 
-sqlc.yaml
-go.mod
-go.sum
-README.md
+- **db**
+  - **migrations** – Database migrations
+  - **sqlc**
+    - `schema.sql` – Database schema
+    - `queries/users.sql` – SQL queries
+    - `db.go`, `models.go`, `users.sql.go` – SQLC generated code
+
+- **internal**
+  - **handler** – HTTP request handlers
+  - **routes** – API route definitions
+  - **service** – Business logic (age calculation)
+  - **models** – Domain models
+  - **logger** – Application logging
+  - **middleware** – Request middleware
+
+- `sqlc.yaml` – SQLC configuration  
+- `go.mod`, `go.sum` – Go module files
 
 ---
 
@@ -191,5 +184,6 @@ irm http://localhost:3000/users
 ## Author
 
 Monal Khatri  
+
 
 
